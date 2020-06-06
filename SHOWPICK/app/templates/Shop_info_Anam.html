@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}shop_info{% endblock %}
+
+{% block css %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'shop_info.css' %}">
+{% endblock css %}
+
+{% block header %}
+  <h1>상권</h1>
+{% endblock header %}
+
+{% block content %}
+<div class="anam">
+  <h2>"성북구 안암동" 상권 정보</h2>
+  <h4>2019.12.31 기준</h4>
+</div>
+<div class="move_vote">
+  <p>소비자 투표 순위 보기</p>
+</div>
+<div class="anam_info">
+  <div class="population">
+    <h5>인구</h5>
+
+  </div>
+
+  <div class="sex_ratio">
+    <h5>남녀 비율</h5>
+
+  </div>
+
+  <div class="age_ratio">
+    <h5>연령대</h5>
+
+  </div>
+
+  <div class="consumption">
+    <h5>소비 성향</h5>
+
+
+  </div>
+
+  <div class="rent">
+    <h5>평균 임대료 </h5>
+
+
+  </div>
+
+  <div class="traffic">
+    <h5>교통 정보</h5>
+
+  </div>
+
+  <div class="store_total">
+    <h5>점포 수</h5>
+
+  </div>
+
+  <div class="store_kind">
+    <h5>점포 종류</h5>
+
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
