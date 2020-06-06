@@ -42,6 +42,6 @@ urlpatterns = [
     path('Show_CEO', views.show_ceo, name= "Show_CEO"),
     path('Vote_Ending', views.vote_ending, name = "Vote_Ending"),   
 
-    path('Shop_info_Anam', views.shop_info_anam, name="Shop_info_Anam"),
+    path('Shop_info_Anam', views.Shop_info_Anam, name="Shop_info_Anam"),
 
 ]

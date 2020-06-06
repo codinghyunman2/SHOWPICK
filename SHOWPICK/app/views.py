@@ -230,7 +230,7 @@ def Shop_info_Anam(request):
     Big_Vote_Results = ConventionBigVote.objects.all().order_by('-vote_count')[0:5]
     Small_Vote_Results = ConventionSmallVote.objects.all().order_by('-vote_count')[0:5]
     Title_Vote_Results = ConventionTitleVote.objects.all().order_by('-vote_count')[0:5]
-    return render(request, "Shop_info_Anam.html",, {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results, "Region":vote.location_dong})
+    return render(request, "Shop_info_Anam.html", {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results, "Region":vote.location_dong})
 
 def shop_info_jongam(request):
     return render(request, "shop_info_jongam.html")
