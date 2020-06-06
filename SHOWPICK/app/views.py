@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
-<<<<<<< HEAD
 from .models import Location, Store, Question, Choice, Custom_user
-=======
-from .models import Location, Store, Custom_user, Vote,ConventionVote, Temporary_Big_Category, Temporary_Small_Category
+from .models import Location, Store, Custom_user, Vote, Temporary_Big_Category, Temporary_Small_Category, ConventionBigVote, ConventionTitleVote, ConventionSmallVote
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -23,7 +21,6 @@ import csv
     # )
 
 from .models import Location, Store, Question, Choice
->>>>>>> 268da7c172a70b12d5bbe9e61b7f8ddb557c5c08
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -43,7 +40,7 @@ def customer_map(request):
 
 def customer_map_Anam(request):
     Temporary_Big_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    with open(r'C:\Users\jeonghyun.DESKTOP-L7UE6V2\Desktop\NEXT_LIKELION\minithon\SHOWPICK\SHOWPICK\app\data\store.csv', newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_big_category = []
@@ -77,7 +74,7 @@ def customer_small_category(request,vote_pk):
     check_big_category = semi_vote.big_category
 
     Temporary_Small_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    with open(r'C:\Users\jeonghyun.DESKTOP-L7UE6V2\Desktop\NEXT_LIKELION\minithon\SHOWPICK\SHOWPICK\app\data\store.csv', newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_small_category = []
@@ -113,7 +110,7 @@ def customer_title(request,vote_pk):
     check_small_category = semi_vote.small_category
 
     Temporary_Small_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    with open(r'C:\Users\jeonghyun.DESKTOP-L7UE6V2\Desktop\NEXT_LIKELION\minithon\SHOWPICK\SHOWPICK\app\data\store.csv', newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_title_category = []
@@ -139,8 +136,6 @@ def customer_title(request,vote_pk):
         return redirect("")
     return render(request, "customer_title.html", {"Show_Title_Category":Show_Title_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
-
-
 def customer_map_Jongam(request):
 
     return render(request, "Customer_map_Jongam.html")
@@ -163,7 +158,7 @@ def testing_map(request):
 
     return render(request, "testing_map.html")
 
-<<<<<<< HEAD
+
 def mypage(request, user_pk):
     custom_user = Custom_user.objects.get(pk=user_pk)
 
@@ -177,24 +172,7 @@ def mypage_edit(request):
             age = request.POST['age'],
             location_gu = request.POST['location_gu'],
             location_dong = request.POST['location_dong'],
-            email = request.POST['email'],
-=======
-
-def mypage(request):
-    if (request.method == 'POST'):
-        found_user = auth.authenticate(
-            username = request.POST['username'],
-            password = request.POST['password']
-        )
-        if (found_user is None):
-            error = '아이디 또는 비밀번호가 틀렸습니다'
-            return render(request, 'registration/login.html', {'error': error })
-
-        auth.login(
-            request, 
-            found_user,
-            backend='django.contrib.auth.backends.ModelBackend'
->>>>>>> 268da7c172a70b12d5bbe9e61b7f8ddb557c5c08
+            email = request.POST['email']
         )
         return redirect('mypage')
     else:
