@@ -1,7 +1,10 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Question, Choice
+from django.shortcuts import render, get_object_or_404, redirect 
+from .models import Question, Choice, Location, Store
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse 
+from django.contrib.auth.models import User
+from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def vote_index(request):
@@ -26,12 +29,6 @@ def vote_result(request, q_id):
 
   return render(request, 'vote_result.html', {'categorys':get_object_or_404(Question, id=q_id)})
 
-from django.shortcuts import render, redirect
-from .models import Location, Store
-from django.contrib.auth.models import User
-from django.contrib import auth
-from django.contrib.auth.decorators import login_required
-# Create your views here.
 
 def home(request):
     return render(request, 'home.html')
