@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375.5" height="187" viewBox="0 0 375.5 187">
+    <g id="prefix__그룹_140" data-name="그룹 140" transform="translate(0 -76)">
+        <path id="prefix__사각형_3" d="M0 0H375V187H0z" data-name="사각형 3" transform="translate(0 76)" style="fill:#f7d777"/>
+        <text id="prefix__우리_동네에_원하는_브랜드를_당신의_손으로_" data-name="우리 동네에 원하는 브랜드를 당신의 손으로!" transform="translate(22 131)" style="fill:#fff;font-size:30px;font-family:OTOmniGothicM,'210 OmniGothicOTF'">
+            <tspan x="0" y="0">우리 동네에 </tspan><tspan x="0" y="45">원하는 브랜드를</tspan><tspan x="0" y="90">당신의 손으로!</tspan>
+        </text>
+        <path id="prefix__선_32" d="M0 0L186 0" data-name="선 32" transform="translate(189.5 118.5)" style="fill:none;stroke:#fff"/>
+    </g>
+</svg>
