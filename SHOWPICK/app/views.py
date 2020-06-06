@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Location, Store, Question, Choice
+from .models import Location, Store, Question, Choice, Custom_user
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -42,23 +42,24 @@ def testing_map(request):
 
     return render(request, "testing_map.html")
 
-def mypage(request):
-    if (request.method == 'POST'):
-        found_user = auth.authenticate(
-            username = request.POST['username'],
-            password = request.POST['password']
-        )
-        if (found_user is None):
-            error = '아이디 또는 비밀번호가 틀렸습니다'
-            return render(request, 'registration/login.html', {'error': error })
+def mypage(request, user_pk):
+    custom_user = Custom_user.objects.get(pk=user_pk)
 
-        auth.login(
-            request, 
-            found_user,
-            backend='django.contrib.auth.backends.ModelBackend'
+    return render(request, "mypage.html", { "custom_user": custom_user})
+
+def mypage_edit(request):
+    if request.method == 'POST':
+        Custom_user.objects.create(
+            real_user = request.user,
+            gender = request.POST['gender'],
+            age = request.POST['age'],
+            location_gu = request.POST['location_gu'],
+            location_dong = request.POST['location_dong'],
+            email = request.POST['email'],
         )
-        return redirect(request.GET.get('next', '/'))
-    return render(request, "mypage.html")
+        return redirect('mypage')
+    else:
+        return render(request, 'mypage_edit.html')
 
 def vote_index(request):
   questions = Question.objects.all()

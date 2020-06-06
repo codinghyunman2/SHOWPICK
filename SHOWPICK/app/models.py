@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -31,3 +32,14 @@ class Choice(models.Model):
 
   def __str__(self):
     return self.name 
+
+class Custom_user(models.Model):
+    real_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'custom_user')
+    gender = models.TextField()
+    age = models.TextField()
+    location_gu = models.TextField()
+    location_dong = models.TextField()
+    email = models.TextField()
+
+    def __str__(self):
+        return self.name 

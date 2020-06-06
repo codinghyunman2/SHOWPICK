@@ -30,6 +30,7 @@ urlpatterns = [
     path('Customer_map_Jongam', views.customer_map_Jongam, name = "Customer_map_Jongam"),
 
     path('mypage/', views.mypage, name="mypage"),
+    path('mypage/edit/', views.mypage_edit, name="mypage_edit"),
 
     path('vote/', views.vote_index, name="vote_index"),
     path('vote/<int:qid>', views.vote_category, name="vote_category"),
