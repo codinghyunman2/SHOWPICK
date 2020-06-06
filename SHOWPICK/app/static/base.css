@@ -17,7 +17,7 @@ header {
 }
 
 header h1 {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
     margin: 0px auto;
 }
@@ -35,3 +35,8 @@ header h1 {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+.basic {
+    margin-bottom: 80px;
+}
