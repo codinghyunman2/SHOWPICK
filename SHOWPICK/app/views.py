@@ -118,6 +118,7 @@ def testing_map(request):
 
     return render(request, "testing_map.html")
 
+
 def mypage(request):
     if (request.method == 'POST'):
         found_user = auth.authenticate(
