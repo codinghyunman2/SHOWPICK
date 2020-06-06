@@ -25,7 +25,10 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('CEO_map', views.ceo_map, name = "CEO_map"),
     path('Customer_map', views.customer_map, name = "Customer_map"),
+
     path('testing_map', views.testing_map, name = "testing_map"),
+    
+
     path('Customer_map_Anam', views.customer_map_Anam, name = "Customer_map_Anam"),
     path('Customer_map_Jongam', views.customer_map_Jongam, name = "Customer_map_Jongam"),
 
