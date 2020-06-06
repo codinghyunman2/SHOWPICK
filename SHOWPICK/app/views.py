@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
-from .models import Post, Comment
+from .models import Location, Store
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+def home(request):
+    return render(request, 'home.html')
 
 def ceo_map(request):
 

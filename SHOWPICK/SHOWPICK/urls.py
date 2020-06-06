@@ -19,16 +19,16 @@ from django.urls import path, include
 from app import views
 
 urlpatterns = [
-    #social login
-    path('accounts/', include('allauth.urls')),
+    # registration
+    path('registration/login', views.login, name="login"),
 
+    # social login
+    path('accounts/', include('allauth.urls')),
 
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('mypage/', views.home, name="mypage"),
     path('CEO_map', views.ceo_map, name = "CEO_map"),
     path('Customer_map', views.customer_map, name = "Customer_map"),
-    path('registration/login', views.login, name="login"),
-    
-    
+    path('vote/', views.home, name="vote"),
+    path('mypage/', views.home, name="mypage"),
 ]
