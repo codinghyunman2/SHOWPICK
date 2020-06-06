@@ -5,7 +5,10 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse 
-import csv
+import csv, os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")
 
 
 # Create your views here.
@@ -19,8 +22,9 @@ def customer_map(request):
     return render(request, "Customer_map.html")
 
 def customer_map_Anam(request):
+
     Temporary_Big_Category.objects.all().delete()
-    with open('/Users/hyunmin/Desktop/NEXT_LIKELION/store.csv', newline='') as csvfile:
+    with open(TEMP_DIR, newline='', encoding="euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_big_category = []
@@ -54,7 +58,7 @@ def customer_small_category(request,vote_pk):
     check_big_category = semi_vote.big_category
 
     Temporary_Small_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    with open(TEMP_DIR, newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_small_category = []
