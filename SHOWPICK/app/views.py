@@ -219,7 +219,7 @@ def testing_map(request):
 
 
 def mypage(request):
-    custom_user = Custom_user.objects.all()
+    
     return render(request, "mypage.html")
 
 def vote_home(request):
