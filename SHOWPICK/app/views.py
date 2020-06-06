@@ -12,16 +12,16 @@ def vote_category(request, qid):
   categorys = get_object_or_404(Question, id=qid)
   return render(request, 'vote_category.html', { 'categorys':categorys })
 
-def vote(request):
+def vote_store(request):
   if request.method == "POST":
 
     category_id = request.POST.get('questions')
     category = get_object_or_404(Choice, id = category_id)
 
-    c.votes += 1
-    c.save()
-    return HttpResponseRedirect(reverse('vote:result', args=(c.questions.id,)))
+    category.votes += 1
+    category.save()
+    return HttpResponseRedirect(reverse('vote_store:vote_result', args=(category.questions.id,)))
 
-def result(request, q_id):
+def vote_result(request, q_id):
 
-  return render(request, 'vote_result.html', {'questions':get_object_or_404(Question, id=q_id)})
+  return render(request, 'vote_result.html', {'categorys':get_object_or_404(Question, id=q_id)})

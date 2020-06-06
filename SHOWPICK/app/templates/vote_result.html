@@ -8,8 +8,8 @@
 <body>
   <h1>{{ questions.name }} 투표결과</h1>
   <ul>
-    {% for question in questions.choice_set.all %}
-      <li>{{question.name}} - {{ question.votes }}표</li>
+    {% for category in categorys.choice_set.all %}
+      <li>{{category.name}} - {{ category.votes }}표</li>
     {% endfor %}
   </ul>
   <a href="{% url 'vote_index' %}">메인페이지로 돌아가기</a>

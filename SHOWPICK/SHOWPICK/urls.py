@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('vote/', views.vote_index, name="vote_index"),
     path('vote/<int:qid>', views.vote_category, name="vote_category"),
+    path('vote_store/', views.vote_store, name="vote_store"),
+    path('result/<int:q_id>/', views.vote_result, name="vote_result"),
 ]
