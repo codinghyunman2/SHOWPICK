@@ -8,7 +8,7 @@
 
 {% block header %}    
 <img src="{% static 'home_logo.svg' %}" alt="home_logo">
-<img src="{% static 'home_shopick.svg' %}" alt="shohome_shopickpick">
+<img src="{% static 'home_shopick.svg' %}" alt="home_shopick">
 {% endblock header %}
 
 {% block content %}
@@ -17,14 +17,14 @@
     <div class="customer">
         <p>우리 동네에 원하는 브랜드가 있으신가요?</p>
         <img src="{% static 'home_vote.svg' %}" alt="home_vote">
-        <button>투표하러 가기</button>
+        <div class="button"><a href="http://127.0.0.1:8000/Customer_map">투표하러 가기</a></div>
         <br>
     </div>
     
     <div class="ceo">
         <p>새로운 창업을 계획 중이신가요?</p>
         <img src="{% static 'home_shop.svg' %}" alt="home_shop">
-        <button>상권 정보 보러 가기</button>
+        <div class="button"><a href="http://127.0.0.1:8000/CEO_map">상권 정보 보러 가기</a></div>
     </div>
 
 </div>
