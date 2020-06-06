@@ -3,11 +3,19 @@
 
 {% block css %}
   {% load static %}
-  <link rel="stylesheet" type="text/css" href="{% static 'shop_info.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'shop_info_anam.css' %}">
 {% endblock css %}
 
+{% block header %}
+<div class="banner">
+  <span><</span>
+  <span class="word">상권</span>
+</div>
+{% endblock header %}
+
 {% block content %}
-<h1>상권</h1>
+
+
 <div class="anam">
   <h2>"성북구 안암동" 상권 정보</h2>
   <h4>2019.12.31 기준</h4>

@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Testing_file</title>
-    
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock css %}
+
+{% block content %}
 <div id="map" style="width:100%;height:350px;"></div>
 <p id="result"></p>
 
@@ -45,5 +46,4 @@ polygon.setMap(map);
 
  
 </script>
-</body>
-</html>
+{% endblock content %}
