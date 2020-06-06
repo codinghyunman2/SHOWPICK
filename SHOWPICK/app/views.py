@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
-from .models import Location, Store, Question, Choice, Custom_user, Vote, ConventionVote, Temporary_Big_Category, Temporary_Small_Category
+from .models import Location, Store, Question, Choice, Custom_user, Vote, Temporary_Big_Category, Temporary_Small_Category, ConventionSmallVote, ConventionBigVote, ConventionTitleVote
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse 
 import csv
+import os
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 
 
 # Create your views here.
@@ -19,8 +23,10 @@ def customer_map(request):
     return render(request, "Customer_map.html")
 
 def customer_map_Anam(request):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")
     Temporary_Big_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    with open(TEMP_DIR, newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_big_category = []
@@ -54,7 +60,10 @@ def customer_small_category(request,vote_pk):
     check_big_category = semi_vote.big_category
 
     Temporary_Small_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")
+    Temporary_Big_Category.objects.all().delete()
+    with open(TEMP_DIR, newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_small_category = []
@@ -90,7 +99,10 @@ def customer_title(request,vote_pk):
     check_small_category = semi_vote.small_category
 
     Temporary_Small_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")
+    Temporary_Big_Category.objects.all().delete()
+    with open(TEMP_DIR, newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_title_category = []
@@ -113,10 +125,52 @@ def customer_title(request,vote_pk):
         Vote.objects.filter(pk=vote_pk).update(
             title = request.POST["title_category"]
         )
+        vote = Vote.objects.get(pk=vote_pk)
+        big_category_one = vote.big_category
+        small_category_one = vote.small_category
+        title_one = vote.title
+
+        if ConventionBigVote.objects.filter(category = big_category_one):
+            semi_count = ConventionBigVote.objects.get(category = big_category_one)
+            ConventionBigVote.objects.filter(category = big_category_one).update(
+                vote_count = semi_count.vote_count +1
+            )
+        else:
+            ConventionBigVote.objects.create(
+                category = big_category_one,
+                vote_count = 1
+            )
+        if ConventionSmallVote.objects.filter(category = small_category_one):
+            semi_count = ConventionSmallVote.objects.get(category = small_category_one)
+            ConventionSmallVote.objects.filter(category = small_category_one).update(
+                vote_count = semi_count.vote_count +1
+            )
+        else:
+            ConventionSmallVote.objects.create(
+                category = small_category_one,
+                vote_count = 1
+            )
+        if ConventionTitleVote.objects.filter(category = title_one):
+            semi_count = ConventionTitleVote.objects.get(category = title_one)
+            ConventionTitleVote.objects.filter(category = title_one).update(
+                vote_count = semi_count.vote_count +1
+            )
+        else:
+            ConventionTitleVote.objects.create(
+                category = title_one,
+                vote_count = 1
+            )
+
         return redirect("Customer_map_Anam")
     return render(request, "customer_title.html", {"Show_Title_Category":Show_Title_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
+def show_ceo(request):
+    Big_Vote_Results = ConventionBigVote.objects.all().order_by('-vote_count')[0:5]
+    Small_Vote_Results = ConventionSmallVote.objects.all().order_by('-vote_count')[0:5]
+    Title_Vote_Results = ConventionTitleVote.objects.all().order_by('-vote_count')[0:5]
 
+
+    return render(request, "Show_CEO.html", {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results})
 
 def customer_map_Jongam(request):
 

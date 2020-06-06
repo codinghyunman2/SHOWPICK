@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock css %}
+
+{% block header %}    
+<img src="{% static 'home_logo.svg' %}" alt="home_logo">
+<img src="{% static 'home_shopick.svg' %}" alt="shohome_shopickpick">
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+   {% for Big_Vote_Result in Big_Vote_Results %}
+        {{Big_Vote_Result.category}}
+        {{Big_Vote_Result.vote_count}}
+   {% endfor %}
+   {% for Small_Vote_Result in Small_Vote_Results %}
+        {{Small_Vote_Result.category}}
+        {{Small_Vote_Result.vote_count}}
+   {% endfor %}
+   {% for Title_Vote_Result in Title_Vote_Results %}
+        {{Title_Vote_Result.category}}
+        {{Title_Vote_Result.vote_count}}
+   {% endfor %}
+</div>
+{% endblock content %}
