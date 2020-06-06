@@ -91,7 +91,31 @@
       <p>프랜차이즈 18</p>
       <p>일반점포 120</p>
     </div>
+    <div class = "Region">
+      {{Region}} 투표 결과입니다.
+ </div>
+ <div class = "Big">
+      <p>큰 카테고리의 선호도 입니다.</p>
+{% for Big_Vote_Result in Big_Vote_Results %}
+    <ul>{{Big_Vote_Result.category}} {{Big_Vote_Result.vote_count}}</ul>
+    
+{% endfor %}
+</div>
+<div class = "Small">
+    <p> 작은 카테고리의 선호도 입니다.</p>
+{% for Small_Vote_Result in Small_Vote_Results %}
+    <ul>{{Small_Vote_Result.category}} {{Small_Vote_Result.vote_count}}</ul>
+    
+{% endfor %}
+</div>
+<div class = "Brand">
+    <p>브랜드 선호도입니다.</p>
+{% for Title_Vote_Result in Title_Vote_Results %}
+    <ul>{{Title_Vote_Result.category}} {{Title_Vote_Result.vote_count}}</ul>        
+{% endfor %}
+</div>
 
+<a href = "{% url 'home' %}">홈으로</a>
 
   </div>
 
