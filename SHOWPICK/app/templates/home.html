@@ -4,10 +4,25 @@
 {% block css %}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="icon" type="svg" href="{% static 'home_logo.svg' %}">
+    <link rel="icon" type="svg" href="{% static 'home_shopick.svg' %}">
 {% endblock css %}
 
 {% block content %}
+<header>
+    <img src="home_logo.svg" alt="logo">
+    <img src="home_shopick.svg" alt="shopick">
+</header>
 <div class="container">
-    
+    <img src="home_banner.svg" alt="banner">
+    <div class="customer">
+        <p>우리 동네에 원하는 브랜드가 있으신가요?</p>
+        <img src="home_vote.svg" alt="vote">
+    </div>
+    <div class="ceo">
+        <p>새로운 창업을 계획 중이신가요?</p>
+        <img src="home_shop.svg" alt="shop">
+    </div>
+
 </div>
 {% endblock content %}
