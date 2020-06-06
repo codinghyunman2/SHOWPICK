@@ -32,6 +32,8 @@ urlpatterns = [
     path('testing_map', views.testing_map, name = "testing_map"),
     path('Customer_map_Anam', views.customer_map_Anam, name = "Customer_map_Anam"),
     path('Customer_map_Jongam', views.customer_map_Jongam, name = "Customer_map_Jongam"),
+    path('CEO_map_Anam', views.ceo_map_Anam, name = "CEO_map_Anam"),
+    path('CEO_map_Jongam', views.ceo_map_Jongam, name = "CEO_map_Jongam"),
     path('vote/', views.home, name="vote"),
     path('mypage/', views.home, name="mypage")
 ]
