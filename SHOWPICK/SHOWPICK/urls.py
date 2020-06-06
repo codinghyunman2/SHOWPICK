@@ -30,7 +30,8 @@ urlpatterns = [
     
     path('Customer_map_Anam', views.customer_map_Anam, name = "Customer_map_Anam"),
     path('Customer_map_Jongam', views.customer_map_Jongam, name = "Customer_map_Jongam"),
-
+    path('Shop_info_Anam', views.Shop_info_Anam, name = "Shop_info_Anam"),
+    path('shop_info_jongam', views.shop_info_jongam, name = "shop_info_jongam"),
     path('mypage/', views.mypage, name="mypage"),
 
     path('CEO_map_Anam', views.ceo_map_Anam, name = "CEO_map_Anam"),
