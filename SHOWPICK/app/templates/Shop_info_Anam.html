@@ -95,7 +95,7 @@
   
   <div class = "box">
     <div class = "Big">
-          <h5>큰 카테고리 선호도</h5>
+          <h5>업종 선호도</h5>
     {% for Big_Vote_Result in Big_Vote_Results %}
         <ul>{{Big_Vote_Result.category}} {{Big_Vote_Result.vote_count}}</ul>
         
@@ -105,7 +105,7 @@
 
   <div class = "box">
     <div class = "Small">
-        <h5> 작은 카테고리 선호도</h5>
+        <h5>세부 선호도</h5>
       {% for Small_Vote_Result in Small_Vote_Results %}
         <ul>{{Small_Vote_Result.category}} {{Small_Vote_Result.vote_count}}</ul>
       {% endfor %}
