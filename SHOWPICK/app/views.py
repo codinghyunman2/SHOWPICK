@@ -180,7 +180,7 @@ def customer_title(request,vote_pk):
                 vote_count = 1
             )
 
-        return redirect("Customer_map_Anam")
+        return redirect("Vote_Ending")
     return render(request, "customer_title.html", {"Show_Title_Category":Show_Title_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
 def show_ceo(request):
@@ -191,6 +191,10 @@ def show_ceo(request):
 
 
     return render(request, "Show_CEO.html", {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results, "Region":vote.location_dong})
+
+def vote_ending(request):
+
+    return render(request, "Vote_Ending.html")
 
 def customer_map_Jongam(request):
 
