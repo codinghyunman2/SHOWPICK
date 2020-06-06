@@ -1,0 +1,43 @@
+.top {
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    color: #f7d777;
+    margin: 0 auto;
+}
+
+.category {
+    text-align: center;
+    font-size: 18px;
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.submit button {
+    margin: 20px auto;
+    text-align:center;
+    font-size: 22px;
+    width: 248px;
+    height: 48px;
+    line-height: 40px;
+    border-radius: 24px;
+    border: 0px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #f7d777;
+    color:white;
+    font-weight: bold;
+}
+
+.total {
+    height: 250px;
+}
+
+.total p {
+    text-align: center;
+}
