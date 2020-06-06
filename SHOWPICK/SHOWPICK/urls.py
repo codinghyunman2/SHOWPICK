@@ -42,10 +42,6 @@ urlpatterns = [
     path('mypage/', views.home, name="mypage"),
 
     path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
-    path('vote/', views.vote_index, name="vote_index"),
-    path('vote/<int:qid>', views.vote_category, name="vote_category"),
-    path('vote_store/', views.vote_store, name="vote_store"),
-    path('result/<int:q_id>/', views.vote_result, name="vote_result"),
     path('customer_title/<int:vote_pk>', views.customer_title, name = "customer_title"),
 
     
