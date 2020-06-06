@@ -43,5 +43,4 @@ urlpatterns = [
     path('Vote_Ending', views.vote_ending, name = "Vote_Ending"),   
 
 
-
 ]
