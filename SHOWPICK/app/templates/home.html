@@ -6,22 +6,24 @@
     <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
 {% endblock css %}
 
+{% block header %}    
+<img src="{% static 'home_logo.svg' %}" alt="home_logo">
+<img src="{% static 'home_shopick.svg' %}" alt="shohome_shopickpick">
+{% endblock header %}
+
 {% block content %}
-<header>
-    
-    <img src="{% static 'home_logo.svg' %}" alt="logo">
-    <img src="{% static 'home_shopick.svg' %}" alt="shopick">
-</header>
 <div class="container">
-    <img src="{% static 'home_banner.svg' %}" alt="banner">
+    <img class="banner" src="{% static 'home_banner.svg' %}" alt="home_banner">
     <div class="customer">
         <p>우리 동네에 원하는 브랜드가 있으신가요?</p>
-        <img src="{% static 'home_vote.svg' %}" alt="vote">
+        <img src="{% static 'home_vote.svg' %}" alt="home_vote">
         <button>로그인하고 투표하러 가기</button>
+        <br>
     </div>
+    
     <div class="ceo">
         <p>새로운 창업을 계획 중이신가요?</p>
-        <img src="{% static 'home_shop.svg' %}" alt="shop">
+        <img src="{% static 'home_shop.svg' %}" alt="home_shop">
         <button>상권 정보 확인하러 가기</button>
     </div>
 

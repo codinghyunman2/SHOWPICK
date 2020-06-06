@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vote_index</title>
+</head>
+<body>
+  <h2>투표하기</h2>
+  <p>이 지역에 더 입점되었으면 하는 상점은 무엇인가요?</p>
+  {% for question in questions %}
+    <div>
+      {{ question.name }}
+    </div>
+  {% endfor %}
+</body>
+</html>

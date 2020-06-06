@@ -19,14 +19,19 @@ import csv
 #         category = i1
     # )
 
+from .models import Location, Store, Question, Choice
+from django.contrib.auth.models import User
+from django.contrib import auth
+from django.contrib.auth.decorators import login_required
+from django.http.response import HttpResponseRedirect
+from django.urls import reverse 
+
+
 # Create your views here.
 
 def home(request):
+
     return render(request, 'home.html')
-
-def ceo_map(request):
-
-    return render(request, 'CEO_map.html')
 
 def customer_map(request):
 
@@ -95,6 +100,11 @@ def customer_map_Jongam(request):
 
     return render(request, "Customer_map_Jongam.html")
 
+
+def ceo_map(request):
+
+    return render(request, 'CEO_map.html')
+
 def ceo_map_Anam(request):
 
     return render(request, "CEO_map_Anam.html")
@@ -103,12 +113,12 @@ def ceo_map_Jongam(request):
 
     return render(request, "Ceo_map_Jongam.html")
 
+
 def testing_map(request):
 
     return render(request, "testing_map.html")
 
-
-def login(request):
+def mypage(request):
     if (request.method == 'POST'):
         found_user = auth.authenticate(
             username = request.POST['username'],
@@ -124,4 +134,26 @@ def login(request):
             backend='django.contrib.auth.backends.ModelBackend'
         )
         return redirect(request.GET.get('next', '/'))
-    return render(request, 'registration/login.html')
+    return render(request, "mypage.html")
+
+def vote_index(request):
+  questions = Question.objects.all()
+  return render(request, 'vote_index.html', { 'questions':questions })
+
+def vote_category(request, qid):
+  categorys = get_object_or_404(Question, id=qid)
+  return render(request, 'vote_category.html', { 'categorys':categorys })
+
+def vote_store(request):
+  if request.method == "POST":
+
+    category_id = request.POST.get('questions')
+    category = get_object_or_404(Choice, id = category_id)
+
+    category.votes += 1
+    category.save()
+    return HttpResponseRedirect(reverse('vote_store:vote_result', args=(category.questions.id,)))
+
+def vote_result(request, q_id):
+
+  return render(request, 'vote_result.html', {'categorys':get_object_or_404(Question, id=q_id)})
