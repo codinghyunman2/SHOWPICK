@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#f7d777}
+        </style>
+    </defs>
+    <g id="prefix__그룹_119" data-name="그룹 119" transform="translate(-213 -641)">
+        <path id="prefix__사각형_130" d="M0 0H35V35H0z" data-name="사각형 130" transform="translate(213 641)" style="fill:none"/>
+        <g id="prefix__그룹_118" data-name="그룹 118" transform="translate(-18.212 45.788)">
+            <g id="prefix__user" transform="translate(233.212 597.212)">
+                <path id="prefix__패스_66" d="M15 30a15 15 0 1 1 11.47-5.332 15.159 15.159 0 0 1-1.77 1.775A15.005 15.005 0 0 1 15 30zm0-28.125A13.127 13.127 0 0 0 4.964 23.46a13.279 13.279 0 0 0 1.55 1.554 13.127 13.127 0 0 0 16.974 0 13.279 13.279 0 0 0 1.55-1.554A13.127 13.127 0 0 0 15 1.875z" class="prefix__cls-2" data-name="패스 66"/>
+                <path id="prefix__패스_67" d="M165.625 75.251a5.625 5.625 0 1 1 5.625-5.625 5.632 5.632 0 0 1-5.625 5.625zm0-9.376a3.75 3.75 0 1 0 3.75 3.75 3.754 3.754 0 0 0-3.75-3.75z" class="prefix__cls-2" data-name="패스 67" transform="translate(-150.624 -60.25)"/>
+                <path id="prefix__패스_68" d="M99.408 237.541a.938.938 0 0 1-.91-1.166 8.446 8.446 0 0 0-8.061-10.5h-.247a8.446 8.446 0 0 0-8.061 10.5.938.938 0 1 1-1.819.457A10.316 10.316 0 0 1 90.167 224h.292a10.321 10.321 0 0 1 9.857 12.831.938.938 0 0 1-.908.71z" class="prefix__cls-2" data-name="패스 68" transform="translate(-75.312 -210.874)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+    <g id="prefix__그룹_135" data-name="그룹 135" transform="translate(-19 -34)">
+        <g id="prefix__back" transform="translate(-71.298 42)">
+            <g id="prefix__그룹_134" data-name="그룹 134" transform="translate(102.298)">
+                <path id="prefix__패스_81" d="M104.155 10.005l8.691-8.691a.769.769 0 1 0-1.088-1.088l-9.235 9.235a.77.77 0 0 0 0 1.088l9.235 9.235a.77.77 0 0 0 1.088-1.088z" data-name="패스 81" transform="translate(-102.298)" style="fill:#95989a"/>
+            </g>
+        </g>
+        <path id="prefix__사각형_137" d="M0 0H35V35H0z" data-name="사각형 137" transform="translate(19 34)" style="fill:none"/>
+    </g>
+</svg>
