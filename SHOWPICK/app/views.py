@@ -1,7 +1,4 @@
 from django.shortcuts import render, redirect
-<<<<<<< HEAD
-from .models import Location, Store, Question, Choice, Custom_user
-=======
 from .models import Location, Store, Custom_user, Vote,ConventionVote, Temporary_Big_Category, Temporary_Small_Category
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -23,7 +20,6 @@ import csv
     # )
 
 from .models import Location, Store, Question, Choice
->>>>>>> 268da7c172a70b12d5bbe9e61b7f8ddb557c5c08
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
