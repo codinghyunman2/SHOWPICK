@@ -33,14 +33,11 @@ urlpatterns = [
     path('Customer_map_Jongam', views.customer_map_Jongam, name = "Customer_map_Jongam"),
 
     path('mypage/', views.mypage, name="mypage"),
-    path('mypage/edit/', views.mypage_edit, name="mypage_edit"),
 
     path('CEO_map_Anam', views.ceo_map_Anam, name = "CEO_map_Anam"),
     path('CEO_map_Jongam', views.ceo_map_Jongam, name = "CEO_map_Jongam"),
 
+    path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
  
     path('customer_title/<int:vote_pk>', views.customer_title, name = "customer_title"),
-
-
-    path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
 ]
