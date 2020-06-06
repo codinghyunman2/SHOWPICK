@@ -141,3 +141,6 @@ def vote_home(request):
 
 def shop_info_anam(request):
     return render(request, "shop_info_anam.html")
+
+def shop_info_jongam(request):
+    return render(request, "shop_info_jongam.html")
