@@ -11,12 +11,14 @@
 </head>
 <body>
     <header>{% block header %}{% endblock header %}</header>
+    
+    {% block content %}
+    {% endblock content %}
+
     <div class="nav-bar">
         <a class="nav-item" href="{% url 'home' %}"><img src="{% static 'nav_home.svg' %}" alt="nav_home"></a>
         <a class="nav-item" href="{% url 'Customer_map' %}"><img src="{% static 'nav_vote.svg' %}" alt="nav_vote"></a>
         <a class="nav-item" href="{% url 'mypage' %}"><img src="{% static 'nav_mypage.svg' %}" alt="nav_mypage"></a>
     </div>
-    {% block content %}
-    {% endblock content %}
 </body>
 </html>

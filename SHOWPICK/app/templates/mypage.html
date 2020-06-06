@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Detail{% endblock title %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 {% block css %}
     {% load static %}
@@ -16,7 +18,7 @@
     <p>연령대</p>
     <p>이메일</p>
     <p>지역</p>
-    
+
     <h2>나의 투표</h2>
 
     {% else %}
