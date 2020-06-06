@@ -31,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")
 
 
-# Create your views here.
+# Create your views here. 
 
 def home(request):
 
@@ -75,6 +75,9 @@ def customer_map_Anam(request):
     return render(request, 'customer_map_Anam.html', {'Show_Big_Category':Show_Big_Category})
 
 def customer_small_category(request,vote_pk):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")  
+
     semi_vote= Vote.objects.get(pk=vote_pk)
     check_big_category = semi_vote.big_category
 
@@ -219,7 +222,7 @@ def testing_map(request):
     return render(request, "testing_map.html")
 
 def mypage(request):
-    custom_user = Custom_user.objects.all()
+    
     return render(request, "mypage.html")
 
 def vote_home(request):
@@ -231,6 +234,3 @@ def Shop_info_Anam(request):
     Small_Vote_Results = ConventionSmallVote.objects.all().order_by('-vote_count')[0:5]
     Title_Vote_Results = ConventionTitleVote.objects.all().order_by('-vote_count')[0:5]
     return render(request, "Shop_info_Anam.html", {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results, "Region":vote.location_dong})
-
-def shop_info_jongam(request):
-    return render(request, "shop_info_jongam.html")
