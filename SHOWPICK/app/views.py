@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import Location, Store
+from .models import Location, Store, Question, Choice
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from django.http.response import HttpResponseRedirect
+from django.urls import reverse 
+
 # Create your views here.
 
 def home(request):
@@ -57,3 +60,24 @@ def mypage(request):
         return redirect(request.GET.get('next', '/'))
     return render(request, "mypage.html")
 
+def vote_index(request):
+  questions = Question.objects.all()
+  return render(request, 'vote_index.html', { 'questions':questions })
+
+def vote_category(request, qid):
+  categorys = get_object_or_404(Question, id=qid)
+  return render(request, 'vote_category.html', { 'categorys':categorys })
+
+def vote_store(request):
+  if request.method == "POST":
+
+    category_id = request.POST.get('questions')
+    category = get_object_or_404(Choice, id = category_id)
+
+    category.votes += 1
+    category.save()
+    return HttpResponseRedirect(reverse('vote_store:vote_result', args=(category.questions.id,)))
+
+def vote_result(request, q_id):
+
+  return render(request, 'vote_result.html', {'categorys':get_object_or_404(Question, id=q_id)})
