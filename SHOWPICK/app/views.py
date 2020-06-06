@@ -52,7 +52,7 @@ def customer_map_Anam(request):
         Temporary_Big_Category.objects.create(
             category = i1
         )
-        Show_Big_Category = Temporary_Big_Category.objects.all()
+    Show_Big_Category = Temporary_Big_Category.objects.all()
     
     if request.method == "POST":
         print(request.POST)
@@ -79,20 +79,61 @@ def customer_small_category(request,vote_pk):
     semi_small_category = []
 
     for semi in range(1, len(csv_data)):
-        if csv_data[semi][0] == checkbig_category:
-            semi_big_category.append(csv_data[semi][0])
-    set_semi_big_category = set(semi_big_category)
+        if csv_data[semi][0] == check_big_category:
+            semi_small_category.append(csv_data[semi][1])
+    set_semi_small_category = set(semi_small_category)
 
-    for i1 in set_semi_big_category:
+    for i1 in set_semi_small_category:
         Temporary_Small_Category.objects.create(
-            category = i2
+            category = i1
         )
-        Show_Small_Category = Temporary_Big_Category.objects.all()
-    return render(request, "customer_small_category.html", {"Show_Small_Category":Show_Small_Category})
+    Show_Small_Category = Temporary_Small_Category.objects.all()
+    vote = Vote.objects.get(pk=vote_pk)
+    Found_map1 = vote.location_dong
+    Found_map2 = vote.big_category
+    if request.method == "POST":
 
-def customer_title(reuqest):
+        Vote.objects.filter(pk=vote_pk).update(
+            #onwer = vote.owner,
+            #image =0,
+            #big_category = vote.big_category,
+            small_category = request.POST["Small_Category"],
+            #location_dong = vote.location_dong,
+            #title = 0
+        )
+        return redirect("customer_title", vote_pk)
+    return render(request, "customer_small_category.html", {"Show_Small_Category":Show_Small_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
-    return render(request, "customer_title", {"Show_Small_Category":Show_Small_Category})
+def customer_title(request,vote_pk):
+    semi_vote= Vote.objects.get(pk=vote_pk)
+    check_small_category = semi_vote.small_category
+
+    Temporary_Small_Category.objects.all().delete()
+    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+        csv_data = list(csv.reader(csvfile))
+
+    semi_title_category = []
+
+    for semi in range(1, len(csv_data)):
+        if csv_data[semi][1] == check_small_category:
+            semi_title_category.append(csv_data[semi][2])
+    set_semi_title_category = set(semi_title_category)
+
+    for i1 in set_semi_title_category:
+        Temporary_Small_Category.objects.create(
+            category = i1
+        )
+    Show_Title_Category = Temporary_Small_Category.objects.all()
+    vote = Vote.objects.get(pk=vote_pk)
+    Found_map1 = vote.location_dong
+    Found_map2 = vote.small_category
+    if request.method == "POST":
+        vote = Vote.objects.get(pk=vote_pk)
+        Vote.objects.filter(pk=vote_pk).update(
+            title = request.POST["Title_Category"]
+        )
+        return redirect("")
+    return render(request, "customer_title.html", {"Show_Title_Category":Show_Title_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
 
 
