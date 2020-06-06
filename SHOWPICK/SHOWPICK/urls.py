@@ -19,8 +19,6 @@ from django.urls import path, include
 from app import views
 
 urlpatterns = [
-    # registration
-
     # social login
     path('accounts/', include('allauth.urls')),
 
