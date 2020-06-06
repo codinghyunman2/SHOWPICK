@@ -180,7 +180,7 @@ def customer_title(request,vote_pk):
                 vote_count = 1
             )
 
-        return redirect("home")
+        return redirect("Vote_Ending")
     return render(request, "customer_title.html", {"Show_Title_Category":Show_Title_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
 def show_ceo(request):
@@ -191,6 +191,10 @@ def show_ceo(request):
 
 
     return render(request, "Show_CEO.html", {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results, "Region":vote.location_dong})
+
+def vote_ending(request):
+
+    return render(request, "Vote_Ending.html")
 
 def customer_map_Jongam(request):
 
@@ -222,7 +226,11 @@ def vote_home(request):
     return render(request, "vote_home.html")
 
 def Shop_info_Anam(request):
-    return render(request, "Shop_info_Anam.html")
+    vote = Vote.objects.all()[0]
+    Big_Vote_Results = ConventionBigVote.objects.all().order_by('-vote_count')[0:5]
+    Small_Vote_Results = ConventionSmallVote.objects.all().order_by('-vote_count')[0:5]
+    Title_Vote_Results = ConventionTitleVote.objects.all().order_by('-vote_count')[0:5]
+    return render(request, "Shop_info_Anam.html",, {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results, "Region":vote.location_dong})
 
 def shop_info_jongam(request):
     return render(request, "shop_info_jongam.html")
