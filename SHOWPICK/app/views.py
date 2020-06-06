@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse 
 import csv
+import os
 
 
 # Create your views here.
@@ -19,8 +20,12 @@ def customer_map(request):
     return render(request, "Customer_map.html")
 
 def customer_map_Anam(request):
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")
+
     Temporary_Big_Category.objects.all().delete()
-    with open('/Users/hyunmin/Desktop/NEXT_LIKELION/store.csv', newline='') as csvfile:
+    with open(TEMP_DIR, newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_big_category = []
@@ -50,11 +55,15 @@ def customer_map_Anam(request):
     return render(request, 'customer_map_Anam.html', {'Show_Big_Category':Show_Big_Category})
 
 def customer_small_category(request,vote_pk):
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")    
+    
     semi_vote= Vote.objects.get(pk=vote_pk)
     check_big_category = semi_vote.big_category
 
     Temporary_Small_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    with open(TEMP_DIR, newline='', encoding = "euc-kr") as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_small_category = []
@@ -72,6 +81,9 @@ def customer_small_category(request,vote_pk):
     return render(request, "customer_small_category.html", {"Show_Small_Category":Show_Small_Category})
 
 def customer_title(reuqest):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMP_DIR = os.path.join(BASE_DIR, "app", "data", "store.csv")
+
     for semi in range(1, len(csv_data)):
         if csv_data[semi][1] == check_small_category:
             semi_title_category.append(csv_data[semi][2])
