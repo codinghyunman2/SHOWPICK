@@ -36,6 +36,8 @@ urlpatterns = [
     path('mypage/', views.home, name="mypage"),
 
     path('vote_home/', views.vote_home, name="vote_home"),
+    
+    path('shop_info_anam/', views.shop_info_anam, name="shop_info_anam"),
 
 
 ]

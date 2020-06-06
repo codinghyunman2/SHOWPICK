@@ -62,3 +62,6 @@ def mypage(request):
 
 def vote_home(request):
     return render(request, "vote_home.html")
+
+def shop_info_anam(request):
+    return render(request, "shop_info_anam.html")
