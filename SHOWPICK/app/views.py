@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Location, Store, Question, Choice, Vote, Temporary_Big_Category, Temporary_Small_Category, ConventionSmallVote, ConventionBigVote, ConventionTitleVote
+from .models import Location, Store, Question, Choice, Vote, Custom_user, Temporary_Big_Category, Temporary_Small_Category, ConventionSmallVote, ConventionBigVote, ConventionTitleVote
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required

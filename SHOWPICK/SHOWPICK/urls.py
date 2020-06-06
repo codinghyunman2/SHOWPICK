@@ -38,7 +38,8 @@ urlpatterns = [
  
     path('customer_title/<int:vote_pk>', views.customer_title, name = "customer_title"),
     path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
-    path('Show_CEO', views.show_ceo, name= "Show_CEO")    
+    path('Show_CEO', views.show_ceo, name= "Show_CEO"),
 
+    path('Shop_info_Anam', views.shop_info_anam, name="Shop_info_Anam")
 
 ]
