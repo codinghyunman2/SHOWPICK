@@ -39,16 +39,9 @@ urlpatterns = [
     path('CEO_map_Jongam', views.ceo_map_Jongam, name = "CEO_map_Jongam"),
 
     path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
-    path('vote/', views.vote_index, name="vote_index"),
-    path('vote/<int:qid>', views.vote_category, name="vote_category"),
-    path('vote_store/', views.vote_store, name="vote_store"),
-    path('result/<int:q_id>/', views.vote_result, name="vote_result"),
+ 
     path('customer_title/<int:vote_pk>', views.customer_title, name = "customer_title"),
-    
-    path('vote_home/', views.vote_home, name="vote_home"),
-    
-    path('shop_info_anam/', views.shop_info_anam, name="shop_info_anam"),
-    path('shop_info_jongam/', views.shop_info_jongam, name="shop_info_jongam"),
+
 
     path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
 ]
