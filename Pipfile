@@ -8,8 +8,7 @@ verify_ssl = true
 [packages]
 django = "*"
 django-allauth = "*"
-storages = "*"
-django-storages = "*"
+
 
 [requires]
 python_version = "3.7"
