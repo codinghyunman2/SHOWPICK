@@ -41,8 +41,17 @@
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
+
 </head>
 <body>
+
+<div class="banner">
+  <h2>투표하기</h2>
+</div>
+
+
+
+
 <div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
@@ -281,5 +290,8 @@ function removeAllChildNods(el) {
     }
 }
 </script>
+<div class="vote">
+    <a href="{% url 'Customer_map_Anam' %}">투표하러가기</a>
+</div>
 </body>
 </html>
