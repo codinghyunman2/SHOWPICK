@@ -20,7 +20,7 @@ def customer_map(request):
 
 def customer_map_Anam(request):
     Temporary_Big_Category.objects.all().delete()
-    with open('/mnt/c/Users/User/Programming/NEXT_LION/Idea-Hackerton/Hacekrton-1430/SHOWPICK/app/data/store.csv', newline='', encoding = "euc-kr") as csvfile:
+    with open('/Users/hyunmin/Desktop/NEXT_LIKELION/store.csv', newline='') as csvfile:
         csv_data = list(csv.reader(csvfile))
 
     semi_big_category = []
