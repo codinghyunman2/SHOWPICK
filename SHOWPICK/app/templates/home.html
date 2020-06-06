@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Detail{% endblock title %}
+{% block title %}Home{% endblock title %}
 
 {% block css %}
     {% load static %}
@@ -7,7 +7,23 @@
 {% endblock css %}
 
 {% block content %}
-<div class="container">
+<header>
     
+    <img src="{% static 'home_logo.svg' %}" alt="logo">
+    <img src="{% static 'home_shopick.svg' %}" alt="shopick">
+</header>
+<div class="container">
+    <img src="{% static 'home_banner.svg' %}" alt="banner">
+    <div class="customer">
+        <p>우리 동네에 원하는 브랜드가 있으신가요?</p>
+        <img src="{% static 'home_vote.svg' %}" alt="vote">
+        <button>로그인하고 투표하러 가기</button>
+    </div>
+    <div class="ceo">
+        <p>새로운 창업을 계획 중이신가요?</p>
+        <img src="{% static 'home_shop.svg' %}" alt="shop">
+        <button>상권 정보 확인하러 가기</button>
+    </div>
+
 </div>
 {% endblock content %}

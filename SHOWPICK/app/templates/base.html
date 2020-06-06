@@ -5,16 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     <title>{% block title %}{% endblock title %}</title>
     {% block css %}{% endblock css %}
 </head>
 <body>
     <header>{% block header %}{% endblock header %}</header>
     <div class="nav-bar">
-        <a class="nav-item" href="{% url 'home' %}"><img src="nav_home.svg" alt="home"></a>
-        <a class="nav-item" href="{% url 'vote' %}"><img src="nav_vote.svg" alt="vote"></a>
-        <a class="nav-item" href="{% url 'mypage' %}"><img src="nav_mypage.svg" alt="mypage"></a>
+        <a class="nav-item" href="{% url 'home' %}"><img src="{% static 'nav_home.svg' %}" alt="home"></a>
+        <a class="nav-item" href="{% url 'vote' %}"><img src="{% static 'nav_vote.svg' %}" alt="vote"></a>
+        <a class="nav-item" href="{% url 'mypage' %}"><img src="{% static 'nav_mypage.svg' %}" alt="mypage"></a>
     </div>
     {% block content %}
     {% endblock content %}
