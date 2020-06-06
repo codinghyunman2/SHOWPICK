@@ -20,5 +20,9 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('CEO_map', views.ceo_map, name = "CEO_map"),
-    path('Customer_map', views.customer_map, name = "Customer_map")
+    path('Customer_map', views.customer_map, name = "Customer_map"),
+    path('registration/login', views.login, name="login"),
+    #social login
+    path('accounts/', include('allauth.urls')),
+    
 ]
