@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% block title %}Detail{% endblock title %}
+{% load socialaccount %}
+{% providers_media_js %}
+
 
 {% block css %}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
 {% endblock css %}
+
+{% block header %}
+    <p class="top">로그인</p>
+{% endblock header %}
 
 {% block content %}
 <div class="container">
@@ -20,13 +27,20 @@
     <h2>나의 투표</h2>
 
     {% else %}
-    <p>소비자 로그인</p>
-    <img src="{% static 'login_user.svg' %}" alt="login_user">
-    <p>로그인이 필요한 서비스입니다.</p>
-    <div class="kakao login">
-        <img src="{% static 'login_kakaotalk.svg' %}" alt="login_kakaotalk">
-        <a class="kakao" href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+    <div class="bigbox">
+        <div class="box">
+            <h3>소비자 로그인</h3>
+            <img class="people" src="{% static 'login_user.svg' %}" alt="login_user">
+            <br>
+            <p>로그인이 필요한 서비스입니다.</p>
+            <br>
+            <div class="kakao_login">
+                <img src="{% static 'login_kakaotalk.svg' %}" alt="login_kakaotalk">
+                <a class="kakao" href="{% provider_login_url 'kakao' %}">카카오로 로그인</a>
+            </div>
+        </div>
     </div>
+    
     {% endif %}
 </div>
 {% endblock content %}
