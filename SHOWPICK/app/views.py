@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+<<<<<<< HEAD
+from .models import Location, Store, Question, Choice, Custom_user
+=======
 from .models import Location, Store, Custom_user, Vote,ConventionVote, Temporary_Big_Category, Temporary_Small_Category
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -20,6 +23,7 @@ import csv
     # )
 
 from .models import Location, Store, Question, Choice
+>>>>>>> 268da7c172a70b12d5bbe9e61b7f8ddb557c5c08
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -159,6 +163,23 @@ def testing_map(request):
 
     return render(request, "testing_map.html")
 
+<<<<<<< HEAD
+def mypage(request, user_pk):
+    custom_user = Custom_user.objects.get(pk=user_pk)
+
+    return render(request, "mypage.html", { "custom_user": custom_user})
+
+def mypage_edit(request):
+    if request.method == 'POST':
+        Custom_user.objects.create(
+            real_user = request.user,
+            gender = request.POST['gender'],
+            age = request.POST['age'],
+            location_gu = request.POST['location_gu'],
+            location_dong = request.POST['location_dong'],
+            email = request.POST['email'],
+=======
+
 def mypage(request):
     if (request.method == 'POST'):
         found_user = auth.authenticate(
@@ -173,28 +194,17 @@ def mypage(request):
             request, 
             found_user,
             backend='django.contrib.auth.backends.ModelBackend'
+>>>>>>> 268da7c172a70b12d5bbe9e61b7f8ddb557c5c08
         )
-        return redirect(request.GET.get('next', '/'))
-    return render(request, "mypage.html")
+        return redirect('mypage')
+    else:
+        return render(request, 'mypage_edit.html')
 
-def vote_index(request):
-  questions = Question.objects.all()
-  return render(request, 'vote_index.html', { 'questions':questions })
+def vote_home(request):
+    return render(request, "vote_home.html")
 
-def vote_category(request, qid):
-  categorys = get_object_or_404(Question, id=qid)
-  return render(request, 'vote_category.html', { 'categorys':categorys })
+def shop_info_anam(request):
+    return render(request, "shop_info_anam.html")
 
-def vote_store(request):
-  if request.method == "POST":
-
-    category_id = request.POST.get('questions')
-    category = get_object_or_404(Choice, id = category_id)
-
-    category.votes += 1
-    category.save()
-    return HttpResponseRedirect(reverse('vote_store:vote_result', args=(category.questions.id,)))
-
-def vote_result(request, q_id):
-
-  return render(request, 'vote_result.html', {'categorys':get_object_or_404(Question, id=q_id)})
+def shop_info_jongam(request):
+    return render(request, "shop_info_jongam.html")
