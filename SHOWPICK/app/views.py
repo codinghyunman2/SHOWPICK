@@ -6,11 +6,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home(request):
+
     return render(request, 'home.html')
-
-def ceo_map(request):
-
-    return render(request, 'CEO_map.html')
 
 def customer_map(request):
 
@@ -24,12 +21,15 @@ def customer_map_Jongam(request):
 
     return render(request, "Customer_map_Jongam.html")
 
+def ceo_map(request):
+
+    return render(request, 'CEO_map.html')
+
 def testing_map(request):
 
     return render(request, "testing_map.html")
 
-
-def login(request):
+def mypage(request):
     if (request.method == 'POST'):
         found_user = auth.authenticate(
             username = request.POST['username'],
@@ -45,4 +45,5 @@ def login(request):
             backend='django.contrib.auth.backends.ModelBackend'
         )
         return redirect(request.GET.get('next', '/'))
-    return render(request, 'registration/login.html')
+    return render(request, "mypage.html")
+
