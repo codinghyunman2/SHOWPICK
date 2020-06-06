@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#f5b8de}
+        </style>
+    </defs>
+    <g id="prefix__그룹_218" data-name="그룹 218" transform="translate(-209 -333)">
+        <g id="prefix__그룹_216" data-name="그룹 216" transform="translate(216.516 335.833)">
+            <circle id="prefix__타원_31" cx="2.516" cy="2.516" r="2.516" class="prefix__cls-1" data-name="타원 31" transform="translate(2.459)"/>
+            <path id="prefix__패스_115" d="M215.2 118.3l-2.147-5.16c-.123-.26-.231-.609-.736-.609h-3.81a.985.985 0 0 0-.91.615l-2.23 5.121a.869.869 0 0 0 1.561.764l.168-.34s.052-.092.033.01c-.121.631-.457 2.528-.457 2.528a.578.578 0 0 0 .594.718h.971c.07 0 .057.052.057.052v3.813a.9.9 0 1 0 1.8 0v-3.832a.034.034 0 0 1 .038-.036h.244c.034 0 .03.04.03.04v3.825a.9.9 0 1 0 1.8 0v-3.8s-.006-.062.069-.062h1.045a.592.592 0 0 0 .608-.721s-.336-2.035-.425-2.589c-.026-.159.242.405.242.405a.737.737 0 0 0 1.035.412.865.865 0 0 0 .42-1.154z" class="prefix__cls-1" data-name="패스 115" transform="translate(-205.279 -106.866)"/>
+        </g>
+        <path id="prefix__사각형_155" d="M0 0H25V25H0z" data-name="사각형 155" transform="translate(209 333)" style="fill:none"/>
+    </g>
+</svg>

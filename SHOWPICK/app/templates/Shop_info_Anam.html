@@ -3,15 +3,14 @@
 
 {% block css %}
   {% load static %}
-  <link rel="stylesheet" type="text/css" href="{% static 'Shop_info_Anam.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'shop_info_anam.css' %}">
 {% endblock css %}
 
 {% block header %}
-    <p class="top">상권</p>
+<h1>상권</h1>
 {% endblock header %}
 
 {% block content %}
-
 
 <div class="anam">
   <h2>"성북구 안암동" 상권 정보</h2>
@@ -33,9 +32,13 @@
 
   <div class="box">
     <h5>남녀 비율</h5>
-    <div class="sex_graph">
-      <p>남 51.5%</p>
-      <p>여 48.5%</p>
+    <div class="gender_graph">
+      <div class="gender">
+        <img src="{% static 'shop_info_male.svg' %}" alt="shop_info_male"><p>51.5%</p>
+      </div>
+      <div class="gender">
+        <img src="{% static 'shop_info_female.svg' %}" alt="shop_info_female"><p>48.5%</p>
+      </div>
     </div>
 
   </div>
@@ -65,8 +68,6 @@
       <p>1층 외 6.5만원</p>
       <p>전체 8.8만원</p>
     </div>
-
-
   </div>
 
   <div class="box">
@@ -75,7 +76,6 @@
       <p>지하철 : 안암역</p>
       <p>버스 : 성북 04 273 1111 2115 101 144</p>
     </div>
-
   </div>
 
   <div class="box">
@@ -91,46 +91,39 @@
       <p>프랜차이즈 18</p>
       <p>일반점포 120</p>
     </div>
-    <div class = "Region">
-      {{Region}} 투표 결과입니다.
- </div>
- <div class = "Big">
-      <p>큰 카테고리의 선호도 입니다.</p>
-{% for Big_Vote_Result in Big_Vote_Results %}
-    <ul>{{Big_Vote_Result.category}} {{Big_Vote_Result.vote_count}}</ul>
-    
-{% endfor %}
-</div>
-<div class = "Small">
-    <p> 작은 카테고리의 선호도 입니다.</p>
-{% for Small_Vote_Result in Small_Vote_Results %}
-    <ul>{{Small_Vote_Result.category}} {{Small_Vote_Result.vote_count}}</ul>
-    
-{% endfor %}
-</div>
-<div class = "Brand">
-    <p>브랜드 선호도입니다.</p>
-{% for Title_Vote_Result in Title_Vote_Results %}
-    <ul>{{Title_Vote_Result.category}} {{Title_Vote_Result.vote_count}}</ul>        
-{% endfor %}
-</div>
-
-<a href = "{% url 'home' %}">홈으로</a>
-
+  </div>
+  
+  <div class = "box">
+    <div class = "Big">
+          <h5>큰 카테고리 선호도</h5>
+    {% for Big_Vote_Result in Big_Vote_Results %}
+        <ul>{{Big_Vote_Result.category}} {{Big_Vote_Result.vote_count}}</ul>
+        
+    {% endfor %}
+    </div>
   </div>
 
+  <div class = "box">
+    <div class = "Small">
+        <h5> 작은 카테고리 선호도</h5>
+      {% for Small_Vote_Result in Small_Vote_Results %}
+        <ul>{{Small_Vote_Result.category}} {{Small_Vote_Result.vote_count}}</ul>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class = "box">
+    <div class = "Brand">
+        <h5>브랜드 선호도</h5>
+      {% for Title_Vote_Result in Title_Vote_Results %}
+        <ul>{{Title_Vote_Result.category}} {{Title_Vote_Result.vote_count}}</ul>        
+      {% endfor %}
+    </div>
+  </div>
 
-
-
+  <div class="box">
+    <a href = "{% url 'home' %}">홈으로</a>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 {% endblock content %}

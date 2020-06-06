@@ -1,23 +1,16 @@
 .move_vote {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
     text-decoration: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 280px;
-    height: 35px;
+    width: 80%;
+    height: 48px;
     border-radius: 3px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     background-color: #f7d777;
-}
-
-.top {
-    font-size: 25px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.24;
-    color: #f7d777;
-    margin: 0 auto;
 }
 
 h2 {
@@ -49,11 +42,40 @@ h4 {
 .box {
     width: 162px;
     height: 157px;
+    margin: 10px 0;
     border-radius: 3px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     text-align: center;
 }
 
-p {
+.box p {
     font-size: 15px;
+    margin: 10px 0;
+}
+
+.gender {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.box a {
+    position: relative;
+    top: 55px;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 60px 42px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #f7d777;
+}
+
+.box ul {
+    font-size: 15px;
+    padding-left: 0;
+    margin: 10px 0;
 }

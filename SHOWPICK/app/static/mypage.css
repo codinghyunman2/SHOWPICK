@@ -111,14 +111,54 @@
     padding: 30px 0;
 }
 
+.votes {
+    width: 90%;
+    height: 105px;
+    margin: 20px auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.votes h3, h4 {
+    margin: 8px 0;
+}
+
+.votes h4 {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.selected_location {
+    background-color: #f7d777;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+
 /* kakao login */
 
-h3 {
+.box h3 {
     opacity: 0.7;
     font-size: 20px;
 }
 
-p {
+.box p {
     font-size: 15px;
 }
 .bigbox {
