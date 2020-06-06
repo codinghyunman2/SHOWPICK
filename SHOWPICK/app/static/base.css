@@ -26,3 +26,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.basic {
+    margin-bottom: 80px;
+}
