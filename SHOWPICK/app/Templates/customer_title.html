@@ -61,11 +61,11 @@
     </div>
 </div>
 
-<form action = '', method = POST>
+<form action = '', method = post>
     {% csrf_token %}
     <div class = "category">
-    {% for semi in Show_Small_Category %}
-        <input type ="radio" id = "{{semi.category}}" name = "Small_Category" value = "{{semi.category}}"/>
+    {% for semi in show_title_category %}
+        <input type ="radio" id = "{{semi.category}}" name = "title_category" value = "{{semi.category}}"/>
         <label for = "{{semi.category}}">{{semi.category}}</label>
 
     {% endfor %}
