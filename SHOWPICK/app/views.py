@@ -106,8 +106,6 @@ def customer_title(reuqest):
     return render(request, "customer_title.html", {"Show_Title_Category":Show_Title_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
 
-
-
 def customer_map_Jongam(request):
 
     return render(request, "Customer_map_Jongam.html")
@@ -130,25 +128,10 @@ def testing_map(request):
 
     return render(request, "testing_map.html")
 
-def mypage(request, user_pk):
-    custom_user = Custom_user.objects.get(pk=user_pk)
-
-    return render(request, "mypage.html", { "custom_user": custom_user})
-
-def mypage_edit(request):
-    if request.method == 'POST':
-        Custom_user.objects.create(
-            real_user = request.user,
-            gender = request.POST['gender'],
-            age = request.POST['age'],
-            location_gu = request.POST['location_gu'],
-            location_dong = request.POST['location_dong'],
-            email = request.POST['email'],
-        )
-        return redirect('mypage')
-    else:
-        return render(request, 'mypage_edit.html')
-
+def mypage(request):
+    custom_user = Custom_user.objects.all()
+    return render(request, "mypage.html")
+    
 def vote_home(request):
     return render(request, "vote_home.html")
 

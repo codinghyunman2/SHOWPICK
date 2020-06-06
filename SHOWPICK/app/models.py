@@ -22,6 +22,9 @@ class Custom_user(models.Model):
     location_dong = models.TextField()
     email = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 class Vote(models.Model):
     owner = models.ForeignKey(User, on_delete = models.CASCADE, related_name = "vote")
     image = models.TextField(null = True)
@@ -42,8 +45,6 @@ class Temporary_Big_Category(models.Model):
 
 class Temporary_Small_Category(models.Model):
     category = models.TextField()
-
-
 
 class Question(models.Model):
   name = models.CharField(max_length=200)
