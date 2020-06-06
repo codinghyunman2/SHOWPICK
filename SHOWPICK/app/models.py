@@ -30,20 +30,18 @@ class Vote(models.Model):
     location_dong = models.TextField(null = True)
     title = models.TextField(null = True)
 
-######영범 수정본############
+
 class ConventionBigVote(models.Model):
-    category = models.TextField
+    category = models.TextField()
     vote_count = models.IntegerField()
 
 class ConventionSmallVote(models.Model):
-    category = models.TextField
+    category = models.TextField()
     vote_count = models.IntegerField()
 
 class ConventionTitleVote(models.Model):
-    category = models.TextField
+    category = models.TextField()
     vote_count = models.IntegerField()
-
-#####영범 수정본 ###############
 
 
 class Temporary_Big_Category(models.Model):
