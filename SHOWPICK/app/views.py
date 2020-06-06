@@ -8,5 +8,7 @@ def ceo_map(request):
 
 def customer_map(request):
 
+    
+
     return render(request, "Customer_map.html")
 
