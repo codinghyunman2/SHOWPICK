@@ -16,9 +16,6 @@
 .user_info {
     width: 85%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 .user_info h2 {
@@ -34,7 +31,6 @@
 
 .basic_info {
     padding: 30px 0;
-    border-bottom: 0.7px solid rgb(140, 140, 140);
 }
 
 .gender_age, .email, .location {
@@ -88,85 +84,20 @@
     background-color: white;
 }
 
-.basic_info a {
+.edit_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.edit_button button {
     color: white;
     font-weight: 700;
     font-size: 18px;
-    text-decoration: none;
-    margin: 0px auto;
-}
-
-.mypage_edit_button {
-    width: 90%;
-    margin: 10px auto;
-    box-sizing: border-box;
-    padding: 15px 75px;
+    width: 80%;
+    height: 48px;
     border-radius: 24px;
     border: 0px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     background-color: #f7d777;
-}
-
-.my_votes {
-    padding: 30px 0;
-}
-
-/* kakao login */
-
-h3 {
-    opacity: 0.7;
-    font-size: 20px;
-}
-
-p {
-    font-size: 15px;
-}
-.bigbox {
-    height: 80vh;
-
-}
-.people {
-    width: 130px;
-    height: 130px;
-}
-.box {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.kakao_login {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 280px;
-    height: 35px;
-    border-radius: 3px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    background-color: #ffeb3b
-}
-
-.kakao {
-    text-decoration: none;
-    color: #707070;
-}
-
-.google_login {
-    margin-top: 14px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 280px;
-    height: 35px;
-    border-radius: 3px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    background-color:#f5f5f5;
-}
-
-.google { 
-    text-decoration: none;
-    color: #707070;
 }

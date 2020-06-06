@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Testing_file</title>
-    
-</head>
-<body>
-<h2>투표하기</h2>
-=======
 {% extends 'base.html' %}
 {% block title %}Home{% endblock title %}
 
@@ -18,14 +7,13 @@
 {% endblock css %}
 
 {% block content %}
->>>>>>> 585a7197d1864d2ba31b39612b7f14745464e814
 <div id="map" style="width:100%;height:350px;"></div>
 <p id="result"></p>
-<form action = '', method = POST>
+<form action = '', method = post>
     {% csrf_token %}
     <div class = "category">
-    {% for semi in Show_Big_Category %}
-        <input type ="radio" id = "{{semi.category}}" name = "Big_Category" value = "{{semi.category}}"/>
+    {% for semi in show_title_category %}
+        <input type ="radio" id = "{{semi.category}}" name = "title_category" value = "{{semi.category}}"/>
         <label for = "{{semi.category}}">{{semi.category}}</label>
 
     {% endfor %}
@@ -35,7 +23,6 @@
     <button type = "submit">제출하기</button>
 </div>
 </form>
-
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e234665492c4a0121f5a78880e0c2417"></script>
 <script>
@@ -70,15 +57,9 @@ var polygon = new kakao.maps.Polygon({
 
 // 지도에 다각형을 표시합니다
 polygon.setMap(map);
+
+ 
 </script>
-<<<<<<< HEAD
-<p>이 지역에 더 입점되었으면 하는 상점은 무엇인가요?</p>
-<div>
-</div>
-</body>
-</html>
-=======
 
 
 {% endblock content %}
->>>>>>> 585a7197d1864d2ba31b39612b7f14745464e814
