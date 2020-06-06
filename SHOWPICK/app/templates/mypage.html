@@ -8,22 +8,53 @@
     <link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
 {% endblock css %}
 
+
 {% block header %}
-    <p class="top">로그인</p>
+{% if user.is_authenticated %}
+<h1>마이페이지</h1>
+{% else %}
+<h1>로그인</h1>
+{% endif %}
 {% endblock header %}
 
 {% block content %}
+
 <div class="container">
     {% if user.is_authenticated %}
-    <img src="{% static 'mypage_user.svg' %}" alt="mypage_user">
-    <div class="welcome"><p>안녕하세요, {{ user.username }}님!!</p></div>
+    <div class="welcome">
+        <img src="{% static 'mypage_user.svg' %}" alt="mypage_user">
+        <p>안녕하세요, {{ user.username }}님!!</p>
+    </div>
 
-    <h1>기본 정보</h1>
-    <p>연령대</p>
-    <p>이메일</p>
-    <p>지역</p>
+    <div class="user_info">
+        <div class="basic_info">
+            <h2>기본 정보</h2>
+            <div class="gender_age">
+                <p>성별/나이</p>
+                <p>{{ custom_user.gender }}</p>
+                <p>{{ custom_user.age }}</p>
+            </div>
 
-    <h2>나의 투표</h2>
+            <div class="email">
+                <p>이메일</p>
+                <p>{{ custom_user.email }}</p>
+            </div>
+            <div class="location">
+                <p>지역</p>
+                <p>{{ custom_user.location_gu }}</p>
+                <p>{{ custom_user.location_dong }}</p>
+            </div>
+            <div class="mypage_edit_button">
+                <a href="{% url 'mypage_edit' %}">내 정보 수정하기</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="my_votes">
+            <h2>나의 투표</h2>
+        </div>
+    </div>
 
     {% else %}
     <div class="bigbox">
