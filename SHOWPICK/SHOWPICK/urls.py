@@ -33,11 +33,12 @@ urlpatterns = [
 
     path('CEO_map_Anam', views.ceo_map_Anam, name = "CEO_map_Anam"),
     path('CEO_map_Jongam', views.ceo_map_Jongam, name = "CEO_map_Jongam"),
-    path('vote/', views.home, name="vote"),
+    
 
     path('vote_home/', views.vote_home, name="vote_home"),
     
     path('shop_info_anam/', views.shop_info_anam, name="shop_info_anam"),
+    path('shop_info_jongam/', views.shop_info_jongam, name="shop_info_jongam"),
 
     path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
     
