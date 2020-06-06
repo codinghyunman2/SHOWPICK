@@ -28,24 +28,15 @@ urlpatterns = [
 
     path('testing_map', views.testing_map, name = "testing_map"),
     
-
     path('Customer_map_Anam', views.customer_map_Anam, name = "Customer_map_Anam"),
     path('Customer_map_Jongam', views.customer_map_Jongam, name = "Customer_map_Jongam"),
 
     path('mypage/', views.mypage, name="mypage"),
-    path('mypage/edit/', views.mypage_edit, name="mypage_edit"),
 
     path('CEO_map_Anam', views.ceo_map_Anam, name = "CEO_map_Anam"),
     path('CEO_map_Jongam', views.ceo_map_Jongam, name = "CEO_map_Jongam"),
-
-    path('vote/', views.home, name="vote"),
-    path('mypage/', views.home, name="mypage"),
-
-    path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
  
     path('customer_title/<int:vote_pk>', views.customer_title, name = "customer_title"),
-
-
     path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category"),
     path('Show_CEO', views.show_ceo, name= "Show_CEO")    
 
