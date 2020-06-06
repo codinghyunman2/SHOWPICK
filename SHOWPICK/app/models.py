@@ -16,12 +16,4 @@ class Choice(models.Model):
   def __str__(self):
     return self.name 
 
-class Location(models.Model):
-    si = models.TextField()
-    gu = models.TextField()
-    dong = models.TextField()
-
-class Store(models.Model):
-    big_category = models.TextField()
-    small_category = models.TextField()
 

@@ -18,22 +18,10 @@ from app import views
 from django.urls import path, include
 
 urlpatterns = [
-    # registration
-    path('registration/login', views.login, name="login"),
-
     # social login
-    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('vote/', views.vote_index, name="vote_index"),
     path('vote/<int:qid>', views.vote_category, name="vote_category"),
     path('vote_store/', views.vote_store, name="vote_store"),
     path('result/<int:q_id>/', views.vote_result, name="vote_result"),
-    path('', views.home, name="home"),
-    path('CEO_map', views.ceo_map, name = "CEO_map"),
-    path('Customer_map', views.customer_map, name = "Customer_map"),
-    path('testing_map', views.testing_map, name = "testing_map"),
-    path('Customer_map_Anam', views.customer_map_Anam, name = "Customer_map_Anam"),
-    path('Customer_map_Jongam', views.customer_map_Jongam, name = "Customer_map_Jongam"),
-    path('vote/', views.home, name="vote"),
-    path('mypage/', views.home, name="mypage")
 ]

@@ -29,12 +29,6 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=200)),
                 ('votes', models.IntegerField(default=0)),
                 ('q', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.Question')),
-            name='Location',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('si', models.TextField()),
-                ('gu', models.TextField()),
-                ('dong', models.TextField()),
             ],
-        ),
+        ), 
     ]
