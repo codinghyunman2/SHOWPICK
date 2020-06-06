@@ -35,5 +35,6 @@ urlpatterns = [
     path('CEO_map_Anam', views.ceo_map_Anam, name = "CEO_map_Anam"),
     path('CEO_map_Jongam', views.ceo_map_Jongam, name = "CEO_map_Jongam"),
     path('vote/', views.home, name="vote"),
-    path('mypage/', views.home, name="mypage")
+    path('mypage/', views.home, name="mypage"),
+    path('customer_small_category/<int:vote_pk>', views.customer_small_category, name ="customer_small_category")
 ]
