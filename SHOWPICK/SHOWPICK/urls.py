@@ -14,7 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 from django.urls import path, include
 from app import views
 
@@ -34,6 +33,11 @@ urlpatterns = [
     path('CEO_map_Anam', views.ceo_map_Anam, name = "CEO_map_Anam"),
     path('CEO_map_Jongam', views.ceo_map_Jongam, name = "CEO_map_Jongam"),
     path('vote/', views.home, name="vote"),
-    path('mypage/', views.home, name="mypage")
+    path('mypage/', views.home, name="mypage"),
+
+    path('vote/', views.vote_index, name="vote_index"),
+    path('vote/<int:qid>', views.vote_category, name="vote_category"),
+    path('vote_store/', views.vote_store, name="vote_store"),
+    path('result/<int:q_id>/', views.vote_result, name="vote_result"),
 
 ]
