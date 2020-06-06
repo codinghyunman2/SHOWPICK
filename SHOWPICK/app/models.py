@@ -7,6 +7,6 @@ class Location(models.Model):
     gu = models.TextField()
     dong = models.TextField()
 
-class store(models.Model):
+class Store(models.Model):
     big_category = models.TextField()
     small_category = models.TextField()
