@@ -180,7 +180,7 @@ def customer_title(request,vote_pk):
                 vote_count = 1
             )
 
-        return redirect("Customer_map_Anam")
+        return redirect("home")
     return render(request, "customer_title.html", {"Show_Title_Category":Show_Title_Category, "Found_map1":Found_map1, "Found_map2":Found_map2})
 
 def show_ceo(request):
@@ -214,7 +214,6 @@ def testing_map(request):
 
     return render(request, "testing_map.html")
 
-
 def mypage(request):
     custom_user = Custom_user.objects.all()
     return render(request, "mypage.html")
@@ -222,8 +221,8 @@ def mypage(request):
 def vote_home(request):
     return render(request, "vote_home.html")
 
-def shop_info_anam(request):
-    return render(request, "shop_info_anam.html")
+def Shop_info_Anam(request):
+    return render(request, "Shop_info_Anam.html")
 
 def shop_info_jongam(request):
     return render(request, "shop_info_jongam.html")

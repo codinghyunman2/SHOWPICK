@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>키워드로 장소검색하고 목록으로 표출하기</title>
-    <style>
+{% extends 'base.html' %}
+{% block title %}키워드로 장소검색하고 목록으로 표출하기{% endblock %}
+
+{% block css %}
+ <style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 .map_wrap {position:relative;width:100%;height:500px;}
@@ -41,8 +40,16 @@
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
-</head>
-<body>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'customer_title.css' %}">
+{% endblock css %}
+
+{% block header %}
+<p class="top">투표</p>
+{% endblock header %}
+
+{% block content %}
+
 <div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
@@ -60,7 +67,7 @@
         <div id="pagination"></div>
     </div>
 </div>
-
+<br>
 <form action = '', method = post>
     {% csrf_token %}
     <div class = "category">
@@ -71,8 +78,9 @@
     {% endfor %}
 
 </div>
+<br>
 <div class = "submit">
-    <button type = "submit">제출하기</button>
+    <button class = "submit" type = "submit">제출하기</button>
 </div>
 </form>
 
@@ -296,5 +304,5 @@ function removeAllChildNods(el) {
     }
 }
 </script>
-</body>
-</html>
+
+{% endblock content %}

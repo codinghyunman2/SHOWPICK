@@ -36,3 +36,7 @@ header h1 {
     justify-content: space-around;
     align-items: center;
 }
+
+.basic {
+    margin-bottom: 80px;
+}
