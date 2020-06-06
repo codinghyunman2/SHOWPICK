@@ -14,7 +14,9 @@
 
 .category {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px 20px;
+    line-height: 28px;
 }
 
 .top {

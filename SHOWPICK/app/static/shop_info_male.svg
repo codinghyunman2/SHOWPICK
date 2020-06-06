@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#b7e3ff}
+        </style>
+    </defs>
+    <g id="prefix__그룹_217" data-name="그룹 217" transform="translate(-209 -293)">
+        <g id="prefix__그룹_215" data-name="그룹 215" transform="translate(216.998 296.04)">
+            <path id="prefix__패스_114" d="M7.761 112.351a1.011 1.011 0 0 0-.963-.621c-.2 0-.224.005-.346.005H2.789a.954.954 0 0 0-.963.616l-1.771 5.315a.87.87 0 0 0 1.63.609l.471-1.251s.034-.126.034.425v7.377a1.172 1.172 0 0 0 2.344 0v-4.82a.037.037 0 0 1 .04-.043h.44a.039.039 0 0 1 .041.043v4.82a1.172 1.172 0 0 0 2.344 0v-7.377c0-.56.049-.383.049-.383l.455 1.21a.87.87 0 0 0 1.63-.609z" class="prefix__cls-1" data-name="패스 114" transform="translate(.001 -106.157)"/>
+            <ellipse id="prefix__타원_30" cx="2.516" cy="2.49" class="prefix__cls-1" data-name="타원 30" rx="2.516" ry="2.49" transform="translate(2.301)"/>
+        </g>
+        <path id="prefix__사각형_154" d="M0 0H25V25H0z" data-name="사각형 154" transform="translate(209 293)" style="fill:none"/>
+    </g>
+</svg>

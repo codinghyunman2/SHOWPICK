@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#95989a}
+        </style>
+    </defs>
+    <g id="prefix__그룹_220" data-name="그룹 220" transform="translate(-.168 -.1)">
+        <g id="prefix__Page-1" transform="translate(2.181 1.29)">
+            <g id="prefix___037---Train" data-name="037---Train">
+                <path id="prefix__Shape" d="M.9 21.436a.727.727 0 0 0 .636.375h3.09a.731.731 0 0 0 .681-.473l.1-.254h12.029l.1.254a.731.731 0 0 0 .681.473H21.3a.727.727 0 0 0 .62-1.111l-4.357-6.967a3.263 3.263 0 0 0 1.124-2.462V5.816A5.823 5.823 0 0 0 12.872 0H9.963a5.823 5.823 0 0 0-5.816 5.816v5.453a3.263 3.263 0 0 0 1.124 2.462L.915 20.7a.727.727 0 0 0-.02.738zm4.776-1.079l.273-.727h10.942l.273.727zm2.181-5.816h7.13l.273.727H7.58zm-.545 1.454h8.221l.273.727H7.035zm-.545 1.454h9.311l.545 1.454H6.217zM21.3 21.084h-3.09l-2.46-6.561a3.248 3.248 0 0 0 1.215-.375zm-5.886-7.27h-1.087a5.648 5.648 0 0 1 3.633-5.628v3.084a2.548 2.548 0 0 1-2.544 2.544zM9.963.727h2.908a5.1 5.1 0 0 1 5.089 5.089v1.576a6.406 6.406 0 0 0-4.36 6.421H9.236a6.411 6.411 0 0 0-4.362-6.421V5.816A5.1 5.1 0 0 1 9.963.727zM4.874 11.269V8.185a5.653 5.653 0 0 1 3.635 5.628h-1.09a2.548 2.548 0 0 1-2.545-2.544zm.993 2.879a3.248 3.248 0 0 0 1.215.375l-2.46 6.561h-3.09z" class="prefix__cls-1" transform="translate(-.804)"/>
+                <path id="prefix__Shape-2" d="M14.364 31.727h.727a.364.364 0 0 0 0-.727h-.727a.364.364 0 1 0 0 .727z" class="prefix__cls-1" data-name="Shape" transform="translate(-9.203 -19.731)"/>
+                <path id="prefix__Shape-3" d="M43.091 31h-.727a.364.364 0 1 0 0 .727h.727a.364.364 0 0 0 0-.727z" class="prefix__cls-1" data-name="Shape" transform="translate(-27.026 -19.731)"/>
+                <path id="prefix__Shape-4" d="M15.377 10.077a8.947 8.947 0 0 1 1.385.94.722.722 0 0 0 .46.167h6.454a.722.722 0 0 0 .46-.167 8.947 8.947 0 0 1 1.385-.94.728.728 0 0 0 .377-.635V9a4 4 0 0 0-4-4H19a4 4 0 0 0-4 4v.44a.728.728 0 0 0 .377.637zM25.172 9v.439a9.5 9.5 0 0 0-1.493 1.016h-2.866V5.727H21.9A3.275 3.275 0 0 1 25.172 9zm-9.445 0A3.275 3.275 0 0 1 19 5.727h1.09v4.729h-2.863a9.493 9.493 0 0 0-1.5-1.014z" class="prefix__cls-1" data-name="Shape" transform="translate(-9.836 -3.181)"/>
+                <path id="prefix__Shape-5" d="M28.819 25h-1.455a.364.364 0 0 0 0 .727h1.455a.364.364 0 0 0 0-.727z" class="prefix__cls-1" data-name="Shape" transform="translate(-17.478 -15.912)"/>
+                <path id="prefix__Shape-6" d="M28.819 29h-1.455a.364.364 0 0 0 0 .727h1.455a.364.364 0 0 0 0-.727z" class="prefix__cls-1" data-name="Shape" transform="translate(-17.478 -18.458)"/>
+                <path id="prefix__Shape-7" d="M28.819 33h-1.455a.364.364 0 0 0 0 .728h1.455a.364.364 0 0 0 0-.728z" class="prefix__cls-1" data-name="Shape" transform="translate(-17.478 -21.004)"/>
+            </g>
+        </g>
+        <path id="prefix__사각형_156" d="M0 0H25V25H0z" data-name="사각형 156" transform="translate(.168 .1)" style="fill:none"/>
+    </g>
+</svg>

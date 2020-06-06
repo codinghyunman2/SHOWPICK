@@ -64,7 +64,6 @@
                         <select name='location_dong'>
                             <option value='' selected>-- 동 선택 --</option>
                             <option value='anam'>안암동</option>
-                            <option value='jongam'>종암동</option>
                         </select>
                     </div>
                 </div>
@@ -74,6 +73,17 @@
 
         <div class="my_votes">
             <h2>나의 투표</h2>
+            {% for semi_result in Votes %}
+            <div class="votes">
+                <div class="shop">
+                    <h3>{{semi_result.big_category}}</h3>
+                    <h4>{{semi_result.small_category}} > {{semi_result.title}}</p>
+                </div>
+                <div class="selected_location">
+                    <h3>{{semi_result.location_dong}}</h3>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 

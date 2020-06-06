@@ -220,16 +220,22 @@ def testing_map(request):
 
 def mypage(request):
     custom_user = Custom_user.objects.all()
-    return render(request, "mypage.html")
+    semi_votes = Vote.objects.all()
+    semi_array =[]
+    for semi_vote in semi_votes:
+        if semi_vote.owner == request.user:
+            semi_array.append(semi_vote)
+        
+    return render(request, "mypage.html", {"Votes":semi_array})
 
 def vote_home(request):
     return render(request, "vote_home.html")
 
 def Shop_info_Anam(request):
     vote = Vote.objects.all()[0]
-    Big_Vote_Results = ConventionBigVote.objects.all().order_by('-vote_count')[0:5]
-    Small_Vote_Results = ConventionSmallVote.objects.all().order_by('-vote_count')[0:5]
-    Title_Vote_Results = ConventionTitleVote.objects.all().order_by('-vote_count')[0:5]
+    Big_Vote_Results = ConventionBigVote.objects.all().order_by('-vote_count')[0:3]
+    Small_Vote_Results = ConventionSmallVote.objects.all().order_by('-vote_count')[0:3]
+    Title_Vote_Results = ConventionTitleVote.objects.all().order_by('-vote_count')[0:3]
     return render(request, "Shop_info_Anam.html", {"Big_Vote_Results":Big_Vote_Results, "Small_Vote_Results":Small_Vote_Results, "Title_Vote_Results":Title_Vote_Results, "Region":vote.location_dong})
 
 def shop_info_jongam(request):
