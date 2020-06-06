@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('vote/', views.vote_index, name="vote_index"),
+    path('vote/<int:qid>', views.vote_category, name="vote_category"),
 ]
