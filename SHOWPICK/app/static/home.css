@@ -43,13 +43,9 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    height: 290px;
 }
 
 .ceo img {
     margin: 10px 0;
 }
-
-
-
-
-
